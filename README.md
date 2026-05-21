@@ -2,6 +2,9 @@
 
 PDF「평택시 선거물 배송지」를 분석해 **모바일·카카오톡 공유**에 맞춘 웹 페이지입니다.
 
+- 저장소: https://github.com/whafac/pyeongtaek-election-map
+- 공개 사이트: https://whafac.github.io/pyeongtaek-election-map/
+
 ## 기능
 
 - 9개 배송지 목록 (난이도 필터)
