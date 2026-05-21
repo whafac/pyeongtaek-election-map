@@ -1,0 +1,11 @@
+{
+  "name": "pyeongtaek-map",
+  "version": "1.0.0",
+  "description": "평택시 선거물 배송지 모바일 안내 페이지",
+  "scripts": {
+    "start": "python3 -m http.server 3456 --directory public",
+    "dev": "python3 -m http.server 3456 --directory public",
+    "test": "node scripts/validate-data.mjs"
+  },
+  "private": true
+}
