@@ -10,25 +10,27 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://whafac.github.io/pyeongtaek-election-map/" />
   <meta property="og:title" content="평택시 선거물 배송지 안내" />
-  <meta property="og:description" content="9개 배송지 5톤 차량 진입·하차 난이도, 상세 설명, 네이버 지도 링크" />
-  <meta property="og:image" content="https://whafac.github.io/pyeongtaek-election-map/images/pangseong.png" />
+  <meta property="og:description" content="이충체육센터 출발 9곳 배송 동선, 5톤 진입·하차 안내, 네이버 지도" />
+  <meta property="og:image" content="https://whafac.github.io/pyeongtaek-election-map/images/ichung.png" />
   <meta property="og:locale" content="ko_KR" />
 
   <meta name="theme-color" content="#1e4d8c" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preload" href="data/locations.json" as="fetch" crossorigin />
+  <link rel="preload" href="data/route-guide.json" as="fetch" crossorigin />
 </head>
 <body>
   <!-- 목록 화면 -->
   <div id="home-view" class="home-view active">
     <header class="site-header">
       <h1>평택시 선거물 배송지</h1>
-      <p>5톤 차량 진입·하차 안내 · 네이버 지도 연결</p>
+      <p>배송 동선 순서 · 5톤 진입·하차 안내 · 네이버 지도</p>
     </header>
 
+    <section id="route-guide" class="route-guide" aria-label="배송 동선 안내"></section>
+
     <div class="info-banner">
-      카톡으로 이 페이지 링크를 내면 모바일에서 바로 확인할 수 있습니다.
-      각 배송지의 <strong>지도</strong> 버튼을 누르면 네이버 지도 앱/웹이 열립니다.
+      아래 목록은 <strong>배송 동선 순서</strong>입니다. 카톡 링크 공유 시 모바일에서 바로 확인할 수 있습니다.
     </div>
 
     <div class="legend">
@@ -41,7 +43,12 @@
       </div>
     </div>
 
-    <div class="filter-bar" id="filter-bar" role="tablist" aria-label="난이도 필터"></div>
+    <div class="view-toggle" role="tablist" aria-label="목록 보기">
+      <button type="button" class="view-btn active" data-view="route">🚛 동선순</button>
+      <button type="button" class="view-btn" data-view="difficulty">난이도순</button>
+    </div>
+
+    <div class="filter-bar hidden" id="filter-bar" role="tablist" aria-label="난이도 필터"></div>
 
     <div id="location-list" class="location-list" aria-live="polite"></div>
 
@@ -55,6 +62,7 @@
   <div id="detail-view" class="detail-page" aria-hidden="true">
     <div class="detail-header">
       <button type="button" class="back-btn" id="back-btn" aria-label="목록으로">← 목록</button>
+      <p class="route-step" id="detail-route-step"></p>
       <h1 id="detail-title"></h1>
       <p class="address" id="detail-address"></p>
       <span class="badge" id="detail-badge"></span>

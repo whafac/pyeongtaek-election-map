@@ -1,13 +1,15 @@
 /**
- * 평택시 선거물 배송지 — 모바일·카톡 공유용 SPA
+ * 평택시 선거물 배송지 — 모바일·카톡 공유용 SPA (배송 동선 순)
  */
 
 let locations = [];
+let routeGuide = null;
 
 const homeView = document.getElementById("home-view");
 const detailView = document.getElementById("detail-view");
 const locationListEl = document.getElementById("location-list");
 const filterBar = document.getElementById("filter-bar");
+const routeGuideEl = document.getElementById("route-guide");
 
 const FILTERS = [
   { id: "all", label: "전체" },
@@ -18,11 +20,31 @@ const FILTERS = [
 ];
 
 let activeFilter = "all";
+let listView = "route"; // route | difficulty
 
 /** JSON 데이터 로드 */
 async function loadData() {
-  const res = await fetch("data/locations.json");
-  locations = await res.json();
+  const [locRes, guideRes] = await Promise.all([
+    fetch("data/locations.json"),
+    fetch("data/route-guide.json"),
+  ]);
+  locations = await locRes.json();
+  routeGuide = await guideRes.json();
+  // 동선 순 정렬
+  locations.sort((a, b) => (a.route?.order ?? 99) - (b.route?.order ?? 99));
+}
+
+/** 동선 순 목록 (필터는 난이도순 보기일 때만) */
+function getDisplayList() {
+  if (listView === "route") return locations;
+  const filtered =
+    activeFilter === "all"
+      ? [...locations]
+      : locations.filter((l) => l.difficulty === activeFilter);
+  return filtered.sort((a, b) => {
+    const diffOrder = { easy: 0, moderate: 1, hard: 2, special: 3 };
+    return (diffOrder[a.difficulty] ?? 9) - (diffOrder[b.difficulty] ?? 9);
+  });
 }
 
 /** 난이도 뱃지 HTML */
@@ -30,23 +52,73 @@ function badgeHtml(loc) {
   return `<span class="badge ${loc.difficulty}">${loc.difficultyLabel}</span>`;
 }
 
+/** 동선 뱃지 HTML */
+function routeBadgeHtml(loc) {
+  if (!loc.route) return "";
+  const cls = loc.route.label === "출발" ? "start" : loc.route.isFinal ? "final" : "step";
+  const extra = loc.route.badge ? ` · ${loc.route.badge}` : "";
+  return `<span class="route-badge ${cls}">${loc.route.label}${extra}</span>`;
+}
+
+/** 배송 동선 안내 블록 */
+function renderRouteGuide() {
+  if (!routeGuide) return;
+  const guidesHtml = routeGuide.guides
+    .map(
+      (g) => `
+    <div class="guide-block">
+      <h4>${g.title}</h4>
+      <ul>${g.items.map((i) => `<li>${i}</li>`).join("")}</ul>
+    </div>
+  `
+    )
+    .join("");
+
+  routeGuideEl.innerHTML = `
+    <h3>${routeGuide.title}</h3>
+    <p class="route-subtitle">${routeGuide.subtitle}</p>
+    <p class="route-start">${routeGuide.startNote}</p>
+    ${guidesHtml}
+  `;
+}
+
+/** 구간 헤더가 필요한지 (동선순 보기) */
+function phaseHeaderHtml(loc, prevPhase) {
+  if (listView !== "route" || !loc.route?.phase) return { html: "", phase: prevPhase };
+  if (loc.route.phase === prevPhase) return { html: "", phase: prevPhase };
+  return {
+    html: `<div class="phase-header">${loc.route.phase}</div>`,
+    phase: loc.route.phase,
+  };
+}
+
 /** 목록 카드 렌더 */
 function renderList() {
-  const filtered =
-    activeFilter === "all"
-      ? locations
-      : locations.filter((l) => l.difficulty === activeFilter);
+  const list = getDisplayList();
+  let prevPhase = null;
+  const parts = [];
 
-  locationListEl.innerHTML = filtered
-    .map(
-      (loc) => `
+  list.forEach((loc) => {
+    const { html: phaseHtml, phase } = phaseHeaderHtml(loc, prevPhase);
+    prevPhase = phase;
+    if (phaseHtml) parts.push(phaseHtml);
+
+    parts.push(`
     <article class="location-card" data-id="${loc.id}">
       <a class="card-link" href="#${loc.id}" data-navigate="${loc.id}">
         <div class="card-top">
-          <h2>${loc.name}</h2>
+          <div class="card-title-row">
+            ${listView === "route" ? routeBadgeHtml(loc) : ""}
+            <h2>${loc.name}</h2>
+          </div>
           ${badgeHtml(loc)}
         </div>
         <p class="card-address">${loc.shortAddress}</p>
+        ${
+          listView === "route" && loc.route?.move
+            ? `<p class="card-route-move"><strong>이동</strong> ${loc.route.move}</p>`
+            : ""
+        }
         <p class="card-summary">${loc.summary}</p>
       </a>
       <div class="card-actions">
@@ -55,16 +127,29 @@ function renderList() {
         <a class="btn btn-detail" href="#${loc.id}" data-navigate="${loc.id}">📋 상세</a>
       </div>
     </article>
-  `
-    )
-    .join("");
+  `);
+  });
 
-  // 카드 내 상세/목록 네비게이션
+  locationListEl.innerHTML = parts.join("");
+
   locationListEl.querySelectorAll("[data-navigate]").forEach((el) => {
     el.addEventListener("click", (e) => {
       e.preventDefault();
-      const id = el.getAttribute("data-navigate");
-      openDetail(id);
+      openDetail(el.getAttribute("data-navigate"));
+    });
+  });
+}
+
+/** 보기 전환 (동선순 / 난이도순) */
+function setupViewToggle() {
+  document.querySelectorAll(".view-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      listView = btn.dataset.view;
+      document.querySelectorAll(".view-btn").forEach((b) => {
+        b.classList.toggle("active", b.dataset.view === listView);
+      });
+      filterBar.classList.toggle("hidden", listView === "route");
+      renderList();
     });
   });
 }
@@ -90,6 +175,17 @@ function openDetail(id) {
   const loc = locations.find((l) => l.id === id);
   if (!loc) return;
 
+  const routeStep = document.getElementById("detail-route-step");
+  if (loc.route) {
+    const phase = loc.route.phase ? `${loc.route.phase} · ` : "";
+    routeStep.textContent = `${phase}${loc.route.label}${
+      loc.route.badge ? " [" + loc.route.badge + "]" : ""
+    } (${loc.route.order}/9)`;
+    routeStep.classList.remove("hidden");
+  } else {
+    routeStep.classList.add("hidden");
+  }
+
   document.getElementById("detail-title").textContent = loc.name;
   document.getElementById("detail-address").textContent = loc.address;
 
@@ -103,19 +199,33 @@ function openDetail(id) {
   img.src = loc.image;
   img.alt = `${loc.name} 안내 이미지`;
 
-  document.getElementById("detail-sections").innerHTML = loc.sections
-    .map(
-      (s) => `
+  // 동선 팁 + 기존 섹션
+  const routeSection =
+    loc.route && (loc.route.move || loc.route.tip)
+      ? `
+    <section class="section-block route-section">
+      <h3>🚛 배송 동선</h3>
+      ${loc.route.region ? `<p><strong>위치</strong> ${loc.route.region}</p>` : ""}
+      ${loc.route.move ? `<p><strong>이동</strong> ${loc.route.move}</p>` : ""}
+      ${loc.route.tip ? `<p class="route-tip"><strong>주의·팁</strong> ${loc.route.tip}</p>` : ""}
+    </section>
+  `
+      : "";
+
+  document.getElementById("detail-sections").innerHTML =
+    routeSection +
+    loc.sections
+      .map(
+        (s) => `
     <section class="section-block">
       <h3>${s.title}</h3>
       <ul>${s.items.map((i) => `<li>${i}</li>`).join("")}</ul>
     </section>
   `
-    )
-    .join("");
+      )
+      .join("");
 
-  const mapLink = document.getElementById("detail-map-link");
-  mapLink.href = loc.mapUrl;
+  document.getElementById("detail-map-link").href = loc.mapUrl;
 
   const telLink = document.getElementById("detail-tel-link");
   if (loc.phone) {
@@ -126,12 +236,42 @@ function openDetail(id) {
     telLink.classList.add("hidden");
   }
 
+  // 이전/다음 동선 네비
+  renderDetailNav(loc);
+
   homeView.classList.remove("active");
   detailView.classList.add("active");
   detailView.setAttribute("aria-hidden", "false");
 
   history.pushState({ page: "detail", id }, "", `#${id}`);
   window.scrollTo(0, 0);
+}
+
+/** 상세 화면 이전·다음 배송지 */
+function renderDetailNav(loc) {
+  let nav = document.getElementById("detail-nav");
+  if (!nav) {
+    nav = document.createElement("div");
+    nav.id = "detail-nav";
+    nav.className = "detail-nav";
+    document.querySelector(".detail-body").appendChild(nav);
+  }
+
+  const idx = locations.findIndex((l) => l.id === loc.id);
+  const prev = idx > 0 ? locations[idx - 1] : null;
+  const next = idx < locations.length - 1 ? locations[idx + 1] : null;
+
+  nav.innerHTML = `
+    ${prev ? `<a href="#${prev.id}" class="nav-prev" data-navigate="${prev.id}">← ${prev.route?.label || ""} ${prev.name}</a>` : "<span></span>"}
+    ${next ? `<a href="#${next.id}" class="nav-next" data-navigate="${next.id}">${next.route?.label || ""} ${next.name} →</a>` : "<span></span>"}
+  `;
+
+  nav.querySelectorAll("[data-navigate]").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      openDetail(el.getAttribute("data-navigate"));
+    });
+  });
 }
 
 /** 목록으로 */
@@ -147,8 +287,8 @@ function handleRoute() {
   const hash = location.hash.replace("#", "");
   if (hash && locations.some((l) => l.id === hash)) {
     openDetail(hash);
-  } else {
-    if (detailView.classList.contains("active")) goHome();
+  } else if (detailView.classList.contains("active")) {
+    goHome();
   }
 }
 
@@ -192,7 +332,9 @@ function setupImageModal() {
 
 async function init() {
   await loadData();
+  renderRouteGuide();
   renderFilters();
+  setupViewToggle();
   renderList();
   handleRoute();
 

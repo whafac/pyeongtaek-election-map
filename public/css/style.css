@@ -400,3 +400,181 @@ a {
   color: var(--muted);
   padding: 0 1rem 1rem;
 }
+
+/* 배송 동선 안내 */
+.route-guide {
+  margin: 0.75rem 1rem;
+  padding: 1rem;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 2px solid var(--primary);
+}
+
+.route-guide h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.route-subtitle {
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.route-start {
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.65rem;
+  background: var(--primary-light);
+  border-radius: 8px;
+}
+
+.guide-block {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.guide-block h4 {
+  margin: 0 0 0.4rem;
+  font-size: 0.9rem;
+}
+
+.guide-block ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.85rem;
+}
+
+.guide-block li {
+  margin-bottom: 0.35rem;
+}
+
+/* 보기 전환 */
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 1rem 0.75rem;
+}
+
+.view-btn {
+  flex: 1;
+  min-height: 40px;
+  border: 1px solid #d0d5dd;
+  border-radius: 10px;
+  background: var(--card);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.view-btn.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+/* 구간 헤더 */
+.phase-header {
+  margin: 0.5rem 0 0.25rem;
+  padding: 0.55rem 0.85rem;
+  background: linear-gradient(90deg, var(--primary-light), transparent);
+  border-left: 4px solid var(--primary);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* 동선 뱃지 */
+.route-badge {
+  display: inline-block;
+  flex-shrink: 0;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-right: 0.35rem;
+}
+
+.route-badge.start {
+  background: #1e4d8c;
+  color: #fff;
+}
+
+.route-badge.step {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.route-badge.final {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.card-title-row {
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+  min-width: 0;
+}
+
+.card-title-row h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.card-route-move {
+  margin: 0 0 0.35rem;
+  font-size: 0.8125rem;
+  color: var(--primary);
+  line-height: 1.45;
+}
+
+/* 상세 동선 */
+.route-step {
+  margin: 0 0 0.35rem;
+  font-size: 0.8125rem;
+  opacity: 0.9;
+}
+
+.route-section {
+  border-left: 4px solid var(--primary);
+}
+
+.route-section p {
+  margin: 0.4rem 0;
+  font-size: 0.9rem;
+}
+
+.route-tip {
+  color: var(--moderate);
+  font-weight: 500;
+}
+
+/* 상세 이전·다음 */
+.detail-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.detail-nav a {
+  display: block;
+  padding: 0.65rem 0.5rem;
+  background: var(--primary-light);
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-align: center;
+  line-height: 1.35;
+}
+
+.detail-nav .nav-next {
+  text-align: right;
+}

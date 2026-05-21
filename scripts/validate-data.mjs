@@ -8,7 +8,7 @@ const dir = dirname(fileURLToPath(import.meta.url));
 const path = join(dir, "../public/data/locations.json");
 const data = JSON.parse(readFileSync(path, "utf8"));
 
-const required = ["id", "name", "address", "mapUrl", "difficulty", "sections", "image"];
+const required = ["id", "name", "address", "mapUrl", "difficulty", "sections", "image", "route"];
 let ok = true;
 
 if (!Array.isArray(data) || data.length !== 9) {
@@ -32,6 +32,17 @@ for (const loc of data) {
     console.error(`FAIL: ${loc.id} — 이미지 파일 없음: ${loc.image}`);
     ok = false;
   }
+  if (!loc.route?.order || !loc.route?.label) {
+    console.error(`FAIL: ${loc.id} — route.order/label 누락`);
+    ok = false;
+  }
+}
+
+// 동선 순서 1~9 연속 확인
+const orders = data.map((l) => l.route.order).sort((a, b) => a - b);
+if (orders.join(",") !== "1,2,3,4,5,6,7,8,9") {
+  console.error("FAIL: 배송 동선 order는 1~9여야 합니다:", orders);
+  ok = false;
 }
 
 if (ok) {
