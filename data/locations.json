@@ -1,0 +1,502 @@
+[
+  {
+    "id": "ichung",
+    "name": "이충문화체육센터 실내체육관",
+    "address": "경기도 평택시 장안웃길 149",
+    "shortAddress": "장안웃길 149",
+    "difficulty": "easy",
+    "difficultyLabel": "최상",
+    "summary": "대형 체육시설. 5톤 진입·회전·하차에 가장 우수하고 여유로운 환경.",
+    "phone": "031-666-1390",
+    "mapUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EC%9E%A5%EC%95%88%EC%9B%83%EA%B8%B8%20149/address/3zlynx,2Ar37m,%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EC%9E%A5%EC%95%88%EC%9B%83%EA%B8%B8%20149?searchType=address&isCorrectAnswer=true&c=16.93,0,0,0,dh",
+    "image": "images/ichung.png",
+    "sections": [
+      {
+        "title": "전면 도로 — 양호",
+        "items": [
+          "장안웃길 왕복 2~4차선, 1번 국도(경기대로) 접근 용이",
+          "대형 버스 상시 통행 → 5톤 직선 주행 걸림 없음"
+        ]
+      },
+      {
+        "title": "정문 진입로 — 매우 수월",
+        "items": [
+          "대형 체육시설 특성상 진입로·출입구 매우 넓음",
+          "5톤 우·좌회전 부드럽게 부지 진입 가능"
+        ]
+      },
+      {
+        "title": "실내체육관 내부 — 진입 최상",
+        "items": [
+          "광활한 지상 주차장, 전진·후진·유턴 제약 없음",
+          "체육관 전·측면 접안·탑차 후문 후진 접안 최적",
+          "선거·공보물 납품 시 현장 통제 가능성 높음"
+        ]
+      }
+    ],
+    "route": {
+      "order": 1,
+      "label": "출발",
+      "phase": null,
+      "phaseId": null,
+      "region": "평택시 북동쪽 (송탄 권역)",
+      "move": "서울 적재 완료 차량이 도착한 뒤, 평택시위원회 물량을 하차·납품합니다. 이후 남서쪽 고덕국제신도시 방향으로 배송을 시작합니다.",
+      "tip": "대형 체육시설로 5톤 진입·회전·하차 최상. 평택 배송 첫 하차 지점(납품 시작)."
+    },
+    "cargo": {
+      "committeeName": "평택시위원회",
+      "booklet": {
+        "bundles": 16,
+        "extraCopies": 395,
+        "totalCopies": 8395,
+        "label": "책자형 선거공보"
+      },
+      "poster": {
+        "submitted": 168,
+        "label": "선거벽보"
+      },
+      "braille": {
+        "submitted": 120,
+        "label": "점자형 선거공보"
+      },
+      "contactName": "임미영"
+    }
+  },
+  {
+    "id": "godeok-dong",
+    "name": "고덕동행정복지센터",
+    "address": "경기도 평택시 고덕여염9길 37",
+    "shortAddress": "고덕동 고덕여염9길 37 (평택상공회의소 빌딩 3층)",
+    "difficulty": "special",
+    "difficultyLabel": "특별 주의",
+    "summary": "상가·오피스 빌딩 3층 입주. 5톤 지하주차장 진입 불가, 노상 하차·대차 필요.",
+    "phone": "031-8024-7181",
+    "mapUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EA%B3%A0%EB%8D%95%EC%97%AC%EC%97%BC9%EA%B8%B8%2037/address/3zkHFy,2ApYHB,%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EA%B3%A0%EB%8D%95%EC%97%AC%EC%97%BC9%EA%B8%B8%2037?searchType=address&isCorrectAnswer=true&c=18.00,0,0,0,dh",
+    "image": "images/godeok-dong.png",
+    "sections": [
+      {
+        "title": "고덕여염9길 — 좁고 매우 혼잡",
+        "items": [
+          "삼성전자 평택캠퍼스 인근 상업지, 유동·주정차 많음",
+          "5톤 통행 가능하나 교행·회전 매우 답답"
+        ]
+      },
+      {
+        "title": "빌딩 주차장 — 5톤 진입 불가",
+        "items": [
+          "지하주차장 층고 2.1~2.3m 제한 → 5톤 절대 불가",
+          "단독 청사 앞마당 없음"
+        ]
+      },
+      {
+        "title": "추천 하차 방식 (핵심)",
+        "items": [
+          "빌딩 외부(노상) 정차·하차 필수",
+          "뒤·측면 조업·하역 공간 먼저 확인",
+          "도로변 비상등 정차 후 엘리베이터·구루마로 3층 대차, 신호수·보조 인력 필수"
+        ]
+      }
+    ],
+    "route": {
+      "order": 2,
+      "label": "①",
+      "phase": "1단계: 북부 신도시 및 면 지역 순회",
+      "phaseId": "phase1",
+      "region": null,
+      "move": "체육센터에서 가장 가깝습니다.",
+      "tip": "빌딩형 청사(3층)이므로 지하 진입 불가. 후면 하역장이나 노상 정차 후 신속히 대차로 하차해야 동선이 꼬이지 않습니다."
+    },
+    "cargo": {
+      "committeeName": "고덕동",
+      "booklet": {
+        "bundles": 60,
+        "extraCopies": 80,
+        "totalCopies": 30080,
+        "label": "책자형 선거공보"
+      },
+      "contactName": "홍승진"
+    }
+  },
+  {
+    "id": "godeok-myeon",
+    "name": "고덕면행정복지센터",
+    "address": "경기도 평택시 고덕면 고덕1로 283",
+    "shortAddress": "고덕면 고덕1로 283",
+    "difficulty": "moderate",
+    "difficultyLabel": "보통",
+    "summary": "신도시 인근 도로망 양호. 정문 회전 각도·마당 특성상 약간 주의.",
+    "phone": "031-8024-6841",
+    "mapUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EA%B3%A0%EB%8D%95%EB%A1%9C%20283/address/3zjkxy,2Aq3j2,%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EA%B3%A0%EB%8D%95%EB%A1%9C%20283?searchType=address&isCorrectAnswer=true&c=18.00,0,0,0,dh",
+    "image": "images/godeok-myeon.png",
+    "sections": [
+      {
+        "title": "전면 도로(고덕1로) — 양호",
+        "items": [
+          "중앙선 있는 왕복 2~4차선",
+          "신도시·공사차·버스 통행 → 5톤 직선 주행 매우 좋음"
+        ]
+      },
+      {
+        "title": "정문 진입로 — 보통 (회전 반경 주의)",
+        "items": [
+          "대로→마당 진입로가 직각(90도)에 가까움",
+          "보도블록 경계석·표지석 있음 → 반대 차선 확인 후 넓게 돌아 진입"
+        ]
+      },
+      {
+        "title": "센터 내부 및 하차 팁",
+        "items": [
+          "마당이 아주 넓지 않고 평일 민원 차량 혼잡",
+          "깊숙이 진입 시 내부 회전·퇴출 어려울 수 있음",
+          "마당 초입 정차 또는 후진 진입·접안 권장"
+        ]
+      }
+    ],
+    "route": {
+      "order": 3,
+      "label": "②",
+      "phase": "1단계: 북부 신도시 및 면 지역 순회",
+      "phaseId": "phase1",
+      "region": null,
+      "move": "고덕동에서 서쪽 고덕면 방면으로 조금만 이동하면 됩니다.",
+      "tip": "정문 우회전 시 크게 돌아야 하며, 마당 안쪽 깊숙이 들어가면 회차가 어려우니 입구 초입이나 후진 진입을 권장합니다."
+    },
+    "cargo": {
+      "committeeName": "고덕면",
+      "booklet": {
+        "bundles": 13,
+        "extraCopies": 490,
+        "totalCopies": 6990,
+        "label": "책자형 선거공보"
+      },
+      "contactName": "박민규"
+    }
+  },
+  {
+    "id": "cheongbuk",
+    "name": "청북읍행정복지센터",
+    "address": "경기도 평택시 청북읍 청원로 2",
+    "shortAddress": "청북읍 청원로 2",
+    "difficulty": "easy",
+    "difficultyLabel": "매우 양호",
+    "summary": "도로·부지 정비 양호. 5톤 진입·하차 전반적으로 매우 수월.",
+    "phone": "031-8024-8861",
+    "mapUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EC%B2%AD%EB%B6%81%EC%9D%8D%20%EC%B2%AD%EC%9B%90%EB%A1%9C%202/address/3zfPyo,2ApX0C,%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EC%B2%AD%EB%B6%81%EC%9D%8D%20%EC%B2%AD%EC%9B%90%EB%A1%9C%202?searchType=address&isCorrectAnswer=true&c=18.00,0,0,0,dh",
+    "image": "images/cheongbuk.png",
+    "sections": [
+      {
+        "title": "전면 도로(청원로) — 매우 양호",
+        "items": [
+          "중앙선·좌회전 차선 구분된 왕복 4차선 이상",
+          "청북종합고·아파트 단지 연결 간선도로 → 대형 차량 직선·진입 대기 불편 없음"
+        ]
+      },
+      {
+        "title": "정문 진입로 — 수월함",
+        "items": [
+          "좁은 골목 없이 청원로에서 주차장 마당으로 바로 연결",
+          "입구 넓고 시야 확보 → 5톤 우·좌회전 시 보도블록 충돌 위험 거의 없음"
+        ]
+      },
+      {
+        "title": "센터 내부 및 하차 팁",
+        "items": [
+          "마당·주차 부지가 넓고 시원함",
+          "후진 정렬·회전·퇴출 매우 수월",
+          "평일 낮 민원 차량만 유의"
+        ]
+      }
+    ],
+    "route": {
+      "order": 4,
+      "label": "③",
+      "phase": "2단계: 서부(안중·포승) 대형 간선도로 축 이동",
+      "phaseId": "phase2",
+      "region": null,
+      "move": "고덕면에서 서해안고속도로/39번 국도 축을 타고 북서쪽 청북 방면으로 이동합니다.",
+      "tip": "도로와 정문이 매우 넓어 5톤 차 진입 및 주차가 가장 수월한 구간입니다. 숨을 돌리며 빠르게 하차합니다."
+    },
+    "cargo": {
+      "committeeName": "청북읍",
+      "booklet": {
+        "bundles": 23,
+        "extraCopies": 370,
+        "totalCopies": 11870,
+        "label": "책자형 선거공보"
+      },
+      "contactName": "이유리"
+    }
+  },
+  {
+    "id": "poseung",
+    "name": "포승읍행정복지센터",
+    "address": "경기도 평택시 포승읍 서동대로 1174-16",
+    "shortAddress": "포승읍 서동대로 1174-16",
+    "difficulty": "moderate",
+    "difficultyLabel": "주의",
+    "summary": "대형 공단 인근으로 5톤 통행 가능. 대로→청사 골목 진입 구간 주의.",
+    "phone": "031-8024-8712",
+    "mapUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%ED%8F%AC%EC%8A%B9%EC%9D%8D%20%EC%84%9C%EB%8F%99%EB%8C%80%EB%A1%9C%201174-16/address/3zdLBh,2AnyTj,%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%ED%8F%AC%EC%8A%B9%EC%9D%8D%20%EC%84%9C%EB%8F%99%EB%8C%80%EB%A1%9C%201174-16?searchType=address&isCorrectAnswer=true&c=18.08,0,0,0,dh",
+    "image": "images/poseung.png",
+    "sections": [
+      {
+        "title": "전면 도로(서동대로) — 매우 양호",
+        "items": [
+          "왕복 4~6차선 매우 넓은 서동대로",
+          "덤프트럭·트레일러 상시 통행 → 5톤 이동 제약 없음(정체 제외)"
+        ]
+      },
+      {
+        "title": "골목 진입로 — 주의",
+        "items": [
+          "서동대로→내기삼거리 인근 골목(포승향교길/청사 진입로) 우회전 후 약 150m",
+          "초입·안쪽 길은 왕복 2차선 다소 좁은 아스팔트",
+          "상가·빌라 밀집, 골목 주정차 시 5톤 회전 반경 좁아질 수 있음"
+        ]
+      },
+      {
+        "title": "센터 내부 및 하차 — 양호",
+        "items": [
+          "청사 앞마당·주차장 비교적 넓고 평탄",
+          "마당 진입 후 회전·후진 여유 있으나 민원 혼잡 시 마당 초입 하차 권장"
+        ]
+      }
+    ],
+    "route": {
+      "order": 5,
+      "label": "④",
+      "phase": "2단계: 서부(안중·포승) 대형 간선도로 축 이동",
+      "phaseId": "phase2",
+      "region": null,
+      "move": "청북읍에서 서남쪽 끝인 포승 공단 방향으로 내려옵니다. main 축인 서동대로를 이용합니다.",
+      "tip": "내기삼거리에서 센터로 들어가는 진입 골목이 왕복 2차선으로 다소 좁고 주정차 차량이 많을 수 있으니 크게 선회해야 합니다."
+    },
+    "cargo": {
+      "committeeName": "포승읍",
+      "booklet": {
+        "bundles": 27,
+        "extraCopies": 340,
+        "totalCopies": 13840,
+        "label": "책자형 선거공보"
+      },
+      "contactName": "조재연"
+    }
+  },
+  {
+    "id": "hyeondeok",
+    "name": "현덕면행정복지센터",
+    "address": "경기도 평택시 현덕면 인광길 84",
+    "shortAddress": "현덕면 인광길 84",
+    "difficulty": "hard",
+    "difficultyLabel": "가장 어려움",
+    "summary": "평택 읍·면 중 5톤 진입·하차 난이도 최상. 골목·마당 협소, 운전 시 상당한 주의.",
+    "phone": "031-8024-8912",
+    "mapUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%ED%98%84%EB%8D%95%EB%A9%B4%20%EC%9D%B8%EA%B4%91%EA%B8%B8%2084/address/3zfia3,2AmUsq,%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%ED%98%84%EB%8D%95%EB%A9%B4%20%EC%9D%B8%EA%B4%91%EA%B8%B8%2084?searchType=address&isCorrectAnswer=true&c=18.00,0,0,0,dh",
+    "image": "images/hyeondeok.png",
+    "sections": [
+      {
+        "title": "인광길 — 좁고 통행량 있음",
+        "items": [
+          "실질 왕복 2차선 골목길에 가까움",
+          "현덕초·주거·상가 밀집, 상시 주정차",
+          "5톤 교행 빡빡 → 서행 필수"
+        ]
+      },
+      {
+        "title": "정문 진입로 — 협소",
+        "items": [
+          "건물이 골목 안쪽, 정문 입구 좁음",
+          "한 번에 회전각 잡기 어려워 앞뒤 수정 가능성 높음"
+        ]
+      },
+      {
+        "title": "하차 팁 (가장 중요)",
+        "items": [
+          "마당·주차 매우 협소, 전진 진입 시 내부 회전 불가",
+          "방법 A: 골목에서 비상등·유도원 하에 후진 진입",
+          "방법 B: 만차 시 진입 없이 정문 골목변 정차·신속 하차"
+        ]
+      }
+    ],
+    "route": {
+      "order": 6,
+      "label": "⑤",
+      "phase": "2단계: 서부(안중·포승) 대형 간선도로 축 이동",
+      "phaseId": "phase2",
+      "region": null,
+      "move": "포승읍에서 아산만방조제 방향인 남동쪽 현덕면으로 이동합니다.",
+      "tip": "이번 코스 중 난이도가 가장 높습니다. 골목이 매우 좁고 주차장이 협소하므로 전진 진입하지 말고, 반드시 골목에서부터 비상등을 켜고 후진으로 진입하거나 정문 노상 하차를 해야 합니다."
+    },
+    "cargo": {
+      "committeeName": "현덕면",
+      "booklet": {
+        "bundles": 11,
+        "extraCopies": 70,
+        "totalCopies": 5570,
+        "label": "책자형 선거공보"
+      },
+      "contactName": "이태용"
+    }
+  },
+  {
+    "id": "anjung",
+    "name": "안중읍 행정복지센터",
+    "address": "경기도 평택시 안중읍 안현로 400",
+    "shortAddress": "안중읍 안현로 400",
+    "difficulty": "easy",
+    "difficultyLabel": "매우 양호",
+    "summary": "팽성읍 대비 도로 여건 훨씬 좋음. 5톤 대형 차량 진입·통행 매우 수월.",
+    "phone": "031-8024-8511",
+    "mapUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EC%95%88%EC%A4%91%EC%9D%8D%20%EC%95%88%ED%98%84%EB%A1%9C%20400/address/3zfHuH,2AnGUZ,%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EC%95%88%EC%A4%91%EC%9D%8D%20%EC%95%88%ED%98%84%EB%A1%9C%20400?searchType=address&isCorrectAnswer=true&c=18.28,0,0,0,dh",
+    "image": "images/anjung.png",
+    "sections": [
+      {
+        "title": "전면 도로(안현로) — 매우 양호",
+        "items": [
+          "왕복 4차선(편도 2차선) 이상의 넓은 대로",
+          "5톤 이상 대형 트럭도 직선 주행·통행 제약 없음",
+          "불법 주정차로 차선 막힐 우려 거의 없음"
+        ]
+      },
+      {
+        "title": "정문 진입로 — 수월함",
+        "items": [
+          "넓은 대로변에서 주차장(마당)으로 바로 진입하는 넓은 입구",
+          "진입로 폭·회전 반경 충분 → 반대 차선 침범·보도블록 걱정 없이 안전 진입"
+        ]
+      },
+      {
+        "title": "센터 내부 및 하차 팁",
+        "items": [
+          "청사 앞마당·주차장 여유 있으나 평일 낮 민원·관공서 차량 혼잡 가능",
+          "깊숙이 들어가기보다 진입 직후 마당 한편 넓은 곳에 정차·하차 후 빠져나가기 유리",
+          "도착 전 031-8024-5000 선거 담당에 5톤 차량 공보물 납품·마당 대형차 접안 위치 문의 권장"
+        ]
+      }
+    ],
+    "route": {
+      "order": 7,
+      "label": "⑥",
+      "phase": "3단계: 복귀 및 남부 복합 권역 마무리",
+      "phaseId": "phase3",
+      "region": null,
+      "move": "현덕면에서 다시 북상하여 서부 권역 중심지인 안중으로 이동합니다.",
+      "tip": "왕복 4차선 대로변에 있고 마당이 여유로워 5톤 차량 접안이 매우 편리합니다."
+    },
+    "cargo": {
+      "committeeName": "안중읍",
+      "booklet": {
+        "bundles": 40,
+        "extraCopies": 340,
+        "totalCopies": 20340,
+        "label": "책자형 선거공보"
+      },
+      "contactName": "정우영"
+    }
+  },
+  {
+    "id": "oseong",
+    "name": "오성면행정복지센터",
+    "address": "경기도 평택시 오성면 숙성시장길 23",
+    "shortAddress": "오성면 숙성시장길 23",
+    "difficulty": "easy",
+    "difficultyLabel": "최상",
+    "summary": "2022년 신청사 완공. 부지 정비 우수, 5톤 진입·하차 매우 쾌적.",
+    "phone": "031-8024-8811",
+    "mapUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EC%98%A4%EC%84%B1%EB%A9%B4%20%EC%88%99%EC%84%B1%EC%8B%9C%EC%9E%A5%EA%B8%B8%2023/address/3zhKCf,2AoBit,%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EC%98%A4%EC%84%B1%EB%A9%B4%20%EC%88%99%EC%84%B1%EC%8B%9C%EC%9E%A5%EA%B8%B8%2023?searchType=address&isCorrectAnswer=true&c=19.00,0,0,0,dh",
+    "image": "images/oseong.png",
+    "sections": [
+      {
+        "title": "전면 도로 — 양호",
+        "items": [
+          "중앙선 있는 왕복 2차선, 보도·도로 재정비 완료",
+          "5톤 탑차·카고 직선 주행 막힘 없음"
+        ]
+      },
+      {
+        "title": "정문 진입로 — 매우 양호",
+        "items": [
+          "약 1,300평 부지, 정문 입구 매우 넓음",
+          "5톤 회전 시 구조물 걸림 위험 없이 여유롭게 진입"
+        ]
+      },
+      {
+        "title": "센터 내부 — 최상",
+        "items": [
+          "앞마당·주차장 여유 큼",
+          "내부 회전·후진 접안 매우 수월",
+          "1층 전면 정차·대량 하차 동선 최적"
+        ]
+      }
+    ],
+    "route": {
+      "order": 8,
+      "label": "⑦",
+      "phase": "3단계: 복귀 및 남부 복합 권역 마무리",
+      "phaseId": "phase3",
+      "region": null,
+      "move": "안중읍에서 38번 국도를 타고 동쪽(평택시내 방향)으로 이동하는 길목에 있습니다.",
+      "tip": "최근에 정비된 신축 청사로 마당과 진입로가 매우 넓어 화물차 회전 및 하차가 최상 수준입니다."
+    },
+    "cargo": {
+      "committeeName": "오성면",
+      "booklet": {
+        "bundles": 6,
+        "extraCopies": 260,
+        "totalCopies": 3260,
+        "label": "책자형 선거공보"
+      },
+      "contactName": "설수아"
+    }
+  },
+  {
+    "id": "pangseong",
+    "name": "팽성읍행정복지센터",
+    "address": "경기도 평택시 팽성읍 동서촌로 89",
+    "shortAddress": "팽성읍 동서촌로 89",
+    "difficulty": "moderate",
+    "difficultyLabel": "주의",
+    "summary": "5톤 진입·통행 가능. 정문·주차장 진입 시 회전 반경·불법 주정차에 주의.",
+    "phone": "031-8024-5612",
+    "mapUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%ED%8C%BD%EC%84%B1%EC%9D%8D%20%EB%8F%99%EC%84%9C%EC%B4%8C%EB%A1%9C%2089/address/3zlcJW,2AmODI,%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%ED%8C%BD%EC%84%B1%EC%9D%8D%20%EB%8F%99%EC%84%9C%EC%B4%8C%EB%A1%9C%2089?searchType=address&isCorrectAnswer=true&c=15.00,0,0,0,dh",
+    "image": "images/pangseong.png",
+    "sections": [
+      {
+        "title": "전면 도로(동서촌로)",
+        "items": [
+          "정문이 위치한 동서촌로는 왕복 2차선(편도 1차선) 도로",
+          "도로 폭은 5톤 탑차·카고 차량 통행에 충분",
+          "버스·대형 청소차량 등이 무리 없이 통행하는 노선"
+        ]
+      },
+      {
+        "title": "정문 진입 및 주차장 (주의)",
+        "items": [
+          "동서촌로→주차장 정문 진입로가 직각에 가깝고, 골목 입구 양옆 보도블록·구조물 있음 → 5톤 차량은 회전 반경(내륜차) 확보에 주의, 크게 돌아서 진입",
+          "구도심 중심부라 도로변·진입로 불법 주정차 시 5톤 차량 회전·진입 공간이 매우 협소해질 수 있음"
+        ]
+      }
+    ],
+    "route": {
+      "order": 9,
+      "label": "⑧",
+      "phase": "3단계: 복귀 및 남부 복합 권역 마무리",
+      "phaseId": "phase3",
+      "region": null,
+      "move": "오성면에서 안성천(팽성대교)을 건너 남쪽 끝 팽성읍으로 내려와 최종 일정을 마무리합니다.",
+      "tip": "정문 진입로가 다소 직각이고 구도심이라 골목 주변 불법 주정차가 많으니 마지막까지 회전 반경 확보에 신경 쓰셔야 합니다.",
+      "isFinal": true,
+      "badge": "최종 목적지"
+    },
+    "cargo": {
+      "committeeName": "팽성읍",
+      "booklet": {
+        "bundles": 32,
+        "extraCopies": 170,
+        "totalCopies": 16170,
+        "label": "책자형 선거공보"
+      },
+      "contactName": "이강건"
+    }
+  }
+]

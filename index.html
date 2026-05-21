@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>평택시 선거물 배송지 안내</title>
+  <meta name="description" content="평택시 행정복지센터·체육관 선거공보물(5톤) 배송지 진입·하차 안내. 네이버 지도 바로가기." />
+
+  <!-- 카카오톡·SNS 링크 미리보기 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://whafac.github.io/pyeongtaek-election-map/" />
+  <meta property="og:title" content="평택시 선거물 배송지 안내" />
+  <meta property="og:description" content="이충체육센터 출발 9곳 배송 동선, 5톤 진입·하차 안내, 네이버 지도" />
+  <meta property="og:image" content="https://whafac.github.io/pyeongtaek-election-map/images/ichung.png" />
+  <meta property="og:locale" content="ko_KR" />
+
+  <meta name="theme-color" content="#1e4d8c" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preload" href="data/locations.json" as="fetch" crossorigin />
+  <link rel="preload" href="data/route-guide.json" as="fetch" crossorigin />
+</head>
+<body>
+  <!-- 목록 화면 -->
+  <div id="home-view" class="home-view active">
+    <header class="site-header">
+      <h1>평택시 선거물 배송지</h1>
+      <p>배송 동선 순서 · 5톤 진입·하차 안내 · 네이버 지도</p>
+    </header>
+
+    <section id="route-guide" class="route-guide" aria-label="배송 동선 안내"></section>
+    <section id="delivery-timeline" class="delivery-timeline" aria-label="배송 일정 예상"></section>
+
+    <div class="info-banner">
+      아래 목록은 <strong>배송 동선 순서</strong>입니다. 카톡 링크 공유 시 모바일에서 바로 확인할 수 있습니다.
+    </div>
+
+    <div class="legend">
+      <h3>진입 난이도</h3>
+      <div class="legend-items">
+        <span class="badge easy">매우 양호·최상</span>
+        <span class="badge moderate">주의·보통</span>
+        <span class="badge hard">가장 어려움</span>
+        <span class="badge special">특별 주의</span>
+      </div>
+    </div>
+
+    <div class="view-toggle" role="tablist" aria-label="목록 보기">
+      <button type="button" class="view-btn active" data-view="route">🚛 동선순</button>
+      <button type="button" class="view-btn" data-view="difficulty">난이도순</button>
+    </div>
+
+    <div class="filter-bar hidden" id="filter-bar" role="tablist" aria-label="난이도 필터"></div>
+
+    <div id="location-list" class="location-list" aria-live="polite"></div>
+
+    <p class="share-hint">
+      <button type="button" class="btn btn-detail" id="share-home-btn" style="max-width:280px;margin:0 auto 0.5rem;display:block;width:100%">🔗 전체 목록 링크 복사</button>
+      카톡에 붙여넣기 하면 모바일에서 바로 열립니다.
+    </p>
+  </div>
+
+  <!-- 상세 화면 -->
+  <div id="detail-view" class="detail-page" aria-hidden="true">
+    <div class="detail-header">
+      <button type="button" class="back-btn" id="back-btn" aria-label="목록으로">← 목록</button>
+      <p class="route-step" id="detail-route-step"></p>
+      <h1 id="detail-title"></h1>
+      <p class="address" id="detail-address"></p>
+      <span class="badge" id="detail-badge"></span>
+    </div>
+    <div class="detail-body">
+      <img id="detail-image" class="detail-image" alt="배송지 안내 이미지" loading="lazy" />
+      <div class="summary-box" id="detail-summary"></div>
+      <div id="detail-sections"></div>
+    </div>
+    <div class="sticky-actions">
+      <a id="detail-map-link" class="btn btn-map" href="#" target="_blank" rel="noopener noreferrer">🗺 네이버 지도</a>
+      <a id="detail-tel-link" class="btn btn-detail hidden" href="tel:">📞 전화 문의</a>
+      <button type="button" class="btn btn-detail" id="share-detail-btn">🔗 링크 복사</button>
+    </div>
+  </div>
+
+  <!-- 이미지 확대 -->
+  <div id="image-modal" class="modal" role="dialog" aria-modal="true" aria-label="이미지 확대">
+    <button type="button" class="modal-close" id="modal-close" aria-label="닫기">×</button>
+    <img id="modal-image" src="" alt="" />
+  </div>
+
+  <script src="js/app.js" type="module"></script>
+</body>
+</html>

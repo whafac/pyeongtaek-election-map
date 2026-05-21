@@ -1,0 +1,62 @@
+{
+  "title": "🚛 구간별 배송 동선",
+  "subtitle": "이충문화체육센터 출발 → 팽성읍 최종 (9곳)",
+  "startNote": "서울에서 선거공보물을 모두 적재한 뒤 이충체육관에 도착합니다. 평택시위원회 납품(하차) 후 동선 순서대로 8곳 하차만 진행합니다.",
+  "timeConfig": {
+    "defaultStartTime": "09:00",
+    "crewSize": 3,
+    "copiesPerBundle": 500,
+    "defaultTravelMinutes": 20,
+    "unload": {
+      "baseMinutes": 5,
+      "minutesPerBundle": 0.65,
+      "minutesPer100LooseCopies": 0.5
+    },
+    "note": "하차 시간은 남성 3명·구르마 병행, 트럭 옆에서 바로 내리는 작업 기준 추정입니다. 고덕동(3층 대차)·현덕면(협소)만 추가 시간을 반영했습니다. 현장 여건에 따라 ±20% 정도 달라질 수 있습니다."
+  },
+  "travelLegs": [
+    { "fromId": "ichung", "toId": "godeok-dong", "minutes": 18, "label": "이충 → 고덕동 (신도시)" },
+    { "fromId": "godeok-dong", "toId": "godeok-myeon", "minutes": 10, "label": "고덕동 → 고덕면" },
+    { "fromId": "godeok-myeon", "toId": "cheongbuk", "minutes": 22, "label": "고덕면 → 청북읍 (39번·서해안고속)" },
+    { "fromId": "cheongbuk", "toId": "poseung", "minutes": 28, "label": "청북읍 → 포승읍 (서동대로)" },
+    { "fromId": "poseung", "toId": "hyeondeok", "minutes": 22, "label": "포승읍 → 현덕면 (방조제 방향)" },
+    { "fromId": "hyeondeok", "toId": "anjung", "minutes": 28, "label": "현덕면 → 안중읍" },
+    { "fromId": "anjung", "toId": "oseong", "minutes": 18, "label": "안중읍 → 오성면 (38번 국도)" },
+    { "fromId": "oseong", "toId": "pangseong", "minutes": 22, "label": "오성면 → 팽성읍 (안성천·팽성대교)" }
+  ],
+  "phases": [
+    {
+      "id": "phase1",
+      "title": "1단계: 북부 신도시 및 면 지역 순회",
+      "orderRange": [1, 2]
+    },
+    {
+      "id": "phase2",
+      "title": "2단계: 서부(안중·포승) 대형 간선도로 축 이동",
+      "orderRange": [3, 4, 5]
+    },
+    {
+      "id": "phase3",
+      "title": "3단계: 복귀 및 남부 복합 권역 마무리",
+      "orderRange": [6, 7, 8]
+    }
+  ],
+  "guides": [
+    {
+      "title": "💡 배송 진행 안내",
+      "items": [
+        "선거공보물은 서울에서 5톤 차량에 이미 적재된 상태로 출발합니다. 평택 현장에서는 상차 없이 하차·납품만 합니다.",
+        "이충문화체육센터: 평택시위원회 물량 하차 후, 아래 동선 순서대로 8개 배송지 하차를 이어갑니다."
+      ]
+    },
+    {
+      "title": "📞 연락 조율",
+      "items": [
+        "5톤 화물차 진입이 필요하므로 당일 오전 출발 전 사전 연락 권장",
+        "고덕동: 노상 하차 협의",
+        "현덕면: 마당 주차 통제 요청",
+        "배송 예정 시간을 미리 공유하고 현장 협조를 구하는 것이 안전"
+      ]
+    }
+  ]
+}
