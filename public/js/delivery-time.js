@@ -1,23 +1,23 @@
 /**
- * 배송 소요시간 계산 (3명 하차 기준)
+ * 배송 소요시간 계산 (남성 3명 + 구르마 하차 기준)
  * - 1묶음 = 500부
  * - 이동시간: route-guide.json travelLegs
  */
 
 const COPIES_PER_BUNDLE = 500;
 
-/** 난이도별 하차 보정 계수 */
+/** 난이도별 하차 보정 계수 (구르마 사용 시 소폭만 반영) */
 const DIFFICULTY_FACTOR = {
   easy: 1,
-  moderate: 1.1,
-  hard: 1.25,
-  special: 1.35,
+  moderate: 1.05,
+  hard: 1.1,
+  special: 1.15,
 };
 
-/** 장소별 추가 하차 시간(분) — 대차·후진 등 */
+/** 장소별 추가 하차 시간(분) — 노상 대차·3층 반입·협소 골목 등 */
 const EXTRA_UNLOAD_MINUTES = {
-  "godeok-dong": 18,
-  hyeondeok: 12,
+  "godeok-dong": 10,
+  hyeondeok: 5,
 };
 
 /**
@@ -35,9 +35,9 @@ export function estimateUnloadMinutes(loc, config) {
   if (!c) return 0;
 
   const {
-    baseMinutes = 8,
-    minutesPerBundle = 1.5,
-    minutesPer100LooseCopies = 1.2,
+    baseMinutes = 5,
+    minutesPerBundle = 0.65,
+    minutesPer100LooseCopies = 0.5,
   } = config.unload || {};
 
   const loose = c.extraCopies || 0;

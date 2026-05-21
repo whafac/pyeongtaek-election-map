@@ -8,11 +8,11 @@
     "copiesPerBundle": 500,
     "defaultTravelMinutes": 20,
     "unload": {
-      "baseMinutes": 8,
-      "minutesPerBundle": 1.5,
-      "minutesPer100LooseCopies": 1.2
+      "baseMinutes": 5,
+      "minutesPerBundle": 0.65,
+      "minutesPer100LooseCopies": 0.5
     },
-    "note": "이동·하차 시간은 5톤 트럭·3명 인력 기준 추정치입니다. 현장 교통·주정차·대차 여건에 따라 달라질 수 있습니다."
+    "note": "하차 시간은 남성 3명·구르마 병행, 트럭 옆에서 바로 내리는 작업 기준 추정입니다. 고덕동(3층 대차)·현덕면(협소)만 추가 시간을 반영했습니다. 현장 여건에 따라 ±20% 정도 달라질 수 있습니다."
   },
   "travelLegs": [
     { "fromId": "ichung", "toId": "godeok-dong", "minutes": 18, "label": "이충 → 고덕동 (신도시)" },
