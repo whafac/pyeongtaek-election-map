@@ -5,7 +5,8 @@
   "scripts": {
     "start": "python3 -m http.server 3456 --directory public",
     "dev": "python3 -m http.server 3456 --directory public",
-    "test": "node scripts/validate-data.mjs"
+    "test": "node scripts/validate-data.mjs",
+    "extract-images": "node scripts/extract-images.mjs"
   },
   "private": true
 }

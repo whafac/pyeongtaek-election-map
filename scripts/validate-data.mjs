@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /** 배송지 JSON 구조 검증 (npm test) */
-import { readFileSync } from "fs";
+import { readFileSync, existsSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 
@@ -25,6 +25,11 @@ for (const loc of data) {
   }
   if (!loc.mapUrl.startsWith("https://map.naver.com")) {
     console.error(`FAIL: ${loc.id} — mapUrl 형식 오류`);
+    ok = false;
+  }
+  const imgPath = join(dir, "../public", loc.image);
+  if (!existsSync(imgPath)) {
+    console.error(`FAIL: ${loc.id} — 이미지 파일 없음: ${loc.image}`);
     ok = false;
   }
 }
