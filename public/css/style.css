@@ -578,3 +578,166 @@ a {
 .detail-nav .nav-next {
   text-align: right;
 }
+
+/* 전체 요약 통계 */
+.summary-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+}
+
+.summary-stats div {
+  background: var(--primary-light);
+  padding: 0.5rem 0.65rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.summary-stats strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--primary);
+}
+
+.summary-stats span {
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.time-disclaimer {
+  margin: 0.5rem 0 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* 배송 타임라인 */
+.delivery-timeline {
+  margin: 0 1rem 1rem;
+  padding: 1rem;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.delivery-timeline h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  color: var(--primary);
+}
+
+.timeline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.85rem;
+  border-left: 2px solid #c7d2fe;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.tl-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tl-label {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--primary);
+}
+
+.tl-arrive {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #3730a3;
+}
+
+.tl-name {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.tl-travel {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0.15rem 0;
+}
+
+.tl-cargo {
+  margin: 0.2rem 0;
+  font-size: 0.8125rem;
+  color: #0d7a4a;
+  font-weight: 500;
+}
+
+.tl-unload {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* 카드 수량·시간 */
+.card-cargo {
+  margin: 0.35rem 0 0.2rem;
+  font-size: 0.8125rem;
+  color: #0d7a4a;
+  font-weight: 500;
+}
+
+.card-time {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.6rem;
+}
+
+.time-travel {
+  color: var(--primary);
+}
+
+.time-eta {
+  font-weight: 600;
+  color: #3730a3;
+}
+
+.time-unload {
+  color: var(--moderate);
+}
+
+.cargo-section {
+  border-left: 4px solid #0d7a4a;
+  background: #f0fdf4;
+}
+
+.cargo-section ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.schedule-line {
+  margin: 0.5rem 0 0;
+  font-size: 0.875rem;
+  padding: 0.5rem;
+  background: #fff;
+  border-radius: 8px;
+}

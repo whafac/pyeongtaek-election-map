@@ -8,7 +8,7 @@ const dir = dirname(fileURLToPath(import.meta.url));
 const path = join(dir, "../public/data/locations.json");
 const data = JSON.parse(readFileSync(path, "utf8"));
 
-const required = ["id", "name", "address", "mapUrl", "difficulty", "sections", "image", "route"];
+const required = ["id", "name", "address", "mapUrl", "difficulty", "sections", "image", "route", "cargo"];
 let ok = true;
 
 if (!Array.isArray(data) || data.length !== 9) {
@@ -34,6 +34,14 @@ for (const loc of data) {
   }
   if (!loc.route?.order || !loc.route?.label) {
     console.error(`FAIL: ${loc.id} — route.order/label 누락`);
+    ok = false;
+  }
+  const b = loc.cargo?.booklet;
+  if (!b?.bundles && b?.bundles !== 0) {
+    console.error(`FAIL: ${loc.id} — cargo.booklet 누락`);
+    ok = false;
+  } else if (b.totalCopies !== b.bundles * 500 + b.extraCopies) {
+    console.error(`FAIL: ${loc.id} — totalCopies 불일치`);
     ok = false;
   }
 }

@@ -2,6 +2,28 @@
   "title": "🚛 구간별 배송 동선",
   "subtitle": "이충문화체육센터 출발 → 팽성읍 최종 (9곳)",
   "startNote": "상차 완료 후 남서쪽 고덕국제신도시 방향으로 진입합니다.",
+  "timeConfig": {
+    "defaultStartTime": "09:00",
+    "crewSize": 3,
+    "copiesPerBundle": 500,
+    "defaultTravelMinutes": 20,
+    "unload": {
+      "baseMinutes": 8,
+      "minutesPerBundle": 1.5,
+      "minutesPer100LooseCopies": 1.2
+    },
+    "note": "이동·하차 시간은 5톤 트럭·3명 인력 기준 추정치입니다. 현장 교통·주정차·대차 여건에 따라 달라질 수 있습니다."
+  },
+  "travelLegs": [
+    { "fromId": "ichung", "toId": "godeok-dong", "minutes": 18, "label": "이충 → 고덕동 (신도시)" },
+    { "fromId": "godeok-dong", "toId": "godeok-myeon", "minutes": 10, "label": "고덕동 → 고덕면" },
+    { "fromId": "godeok-myeon", "toId": "cheongbuk", "minutes": 22, "label": "고덕면 → 청북읍 (39번·서해안고속)" },
+    { "fromId": "cheongbuk", "toId": "poseung", "minutes": 28, "label": "청북읍 → 포승읍 (서동대로)" },
+    { "fromId": "poseung", "toId": "hyeondeok", "minutes": 22, "label": "포승읍 → 현덕면 (방조제 방향)" },
+    { "fromId": "hyeondeok", "toId": "anjung", "minutes": 28, "label": "현덕면 → 안중읍" },
+    { "fromId": "anjung", "toId": "oseong", "minutes": 18, "label": "안중읍 → 오성면 (38번 국도)" },
+    { "fromId": "oseong", "toId": "pangseong", "minutes": 22, "label": "오성면 → 팽성읍 (안성천·팽성대교)" }
+  ],
   "phases": [
     {
       "id": "phase1",
